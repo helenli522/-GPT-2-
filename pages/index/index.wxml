@@ -1,0 +1,45 @@
+<view class="list-msg">
+  <!--下拉框  -->
+  <view class='list-msg2' bindtap='bindShowMsg' style="margin-bottom:20px;">
+    <text style="font-size:30rpx;">{{tihuoWay}}</text>
+    <image style='height:20rpx;width:20rpx;' src='/images/down.jpg'></image>
+  </view>
+  <view class="cu-bar bg-white solid-bottom margin-top">
+    <view class="action">
+      <text class="cuIcon-title text-blue"></text>请输入一句话简单概括新闻内容
+    </view>
+  </view>
+  <form bindsubmit="formBindsubmit" bindreset="formReset">
+    <view class="cu-form-group margin-top">
+      <textarea name="in" maxlength="-1" disabled="{{modalName!=null}}" bindinput="textareaAInput" placeholder="提示：时间地点和人物等"></textarea>
+    </view>
+    <view class="cu-bar bg-white solid-bottom margin-top">
+      <view class="action">
+        <text class="cuIcon-title text-blue"></text>新闻预览
+      </view>
+    </view>
+    <view class="solids-bottom padding-xs flex align-center">
+      <view class="flex-sub text-center">
+        <view class="solid-bottom text-lg padding">
+          <text class="text-black">{{output}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="margin-tb-sm text-center">  
+        <button class="cu-btn round lg bg-blue" style="width:25%;margin-bottom:10px;margin-right:15px;" formType="submit">生成</button>
+        <button class="cu-btn round lg bg-yellow" style="width:25%;margin-bottom:10px;margin-left:15px;" formType="reset">重置</button>
+    </view>
+    <view class="margin-tb-sm text-center">  
+        <button class="cu-btn round lg line-grey ">复制结果</button>
+    </view>
+    <view class="margin-tb-sm text-center" bindtap="back">  
+      <button class="cu-btn round lg line-grey ">返回首页</button>
+    </view>
+  </form>
+  <!-- 下拉需要显示的列表 -->
+  <view class="select_box" wx:if="{{select}}">   
+    <view class="select_one" bindtap="mySelect" data-name="体育新闻">体育新闻</view>
+    <view class="select_one" bindtap="mySelect" data-name="财经新闻">财经新闻</view>
+    <view class="select_one" bindtap="mySelect" data-name="综合新闻">综合新闻</view> 
+  </view>
+</view>

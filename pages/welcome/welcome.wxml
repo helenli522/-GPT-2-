@@ -1,0 +1,9 @@
+<view class='container'>
+  <image class="app-logo" src="/images/logo2.png"></image>
+  <view>
+    <text class="app-welcome">Welcome</text>
+  </view>
+  <view class="moto-container" bindtap="go">
+    <button class="cu-btn round lg bg-blue" open-type="getUserInfo">开始使用</button>
+  </view>
+</view>
